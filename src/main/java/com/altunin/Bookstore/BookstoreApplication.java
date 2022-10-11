@@ -21,7 +21,9 @@ public class BookstoreApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-			repository.save(new Book("Hinkula, Juha", "978-178913-808-5", "Hands-on Full Stack Development with Spring Boot and React", 2018, 100));
+			repository.save(new Book("Ernest Hemingway", "1232323-21", "A Farewell to Arms", 1929, 100));
+			repository.save(new Book("George Orwell", "2212343-5", "Animal Farm", 1945, 100));
+			System.out.println("Repo is here " + repository.findById((long) 1).get());
 		};
 	}
 
