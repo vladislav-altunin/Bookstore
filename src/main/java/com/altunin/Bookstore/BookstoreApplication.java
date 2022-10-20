@@ -23,7 +23,6 @@ public class BookstoreApplication {
 		return args -> {
 			repository.save(new Book("Ernest Hemingway", "1232323-21", "A Farewell to Arms", 1929, 100));
 			repository.save(new Book("George Orwell", "2212343-5", "Animal Farm", 1945, 100));
-			System.out.println("Repo is here " + repository.findById((long) 1).get());
 		};
 	}
 

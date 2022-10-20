@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+<title>Edit book</title>
+</head>
+<body>
+	<h1 class="col-md-6">Edit</h1>
+	<form style="width: 300px" action="#" th:action="@{/submit}"
+		th:object="${newBook}" method="post">
+		<input type="hidden" id="id" th:field="${editThisBook.id}" />
+		<div class="form-group col-md-12">
+			<label for="author">Author:</label> <input type="text"
+				class="form-control" id="author" th:field="${editThisBook.author}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="title">Title:</label> <input type="text"
+				class="form-control" id="title" th:field="${editThisBook.title}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="isbn">ISBN:</label> <input type="text"
+				class="form-control" id="isbn" th:field="${editThisBook.isbn}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="year">Published (year):</label> <input type="text"
+				class="form-control" id="year"
+				th:field="${editThisBook.publicationYear}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="price">Price:</label> <input type="text"
+				class="form-control" id="price" th:field="${editThisBook.price}" />
+		</div>
+		<div class="form-group col-md-12">
+			<input class="btn btn-success" type="submit" value="Submit">
+		</div>
+	</form>
+</body>
+</html>
