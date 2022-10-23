@@ -13,6 +13,7 @@
 			<th>Title</th>
 			<th>ISBN</th>
 			<th>Year</th>
+			<th>Category</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -21,6 +22,7 @@
 			<td th:text="${book.title}"></td>
 			<td th:text="${book.isbn}"></td>
 			<td th:text="${book.publicationYear}"></td>
+			<td th:text="${book.getCategory().getName()}"></td>
 			<td><a class="btn btn-danger" th:href="@{/delete/{bookId}(bookId = ${book.getId()})}">Delete</a></td>
 			<td><a class="btn btn-warning" th:href="@{/edit/{bookId}(bookId = ${book.getId()})}">Edit</a></td>
 		</tr>

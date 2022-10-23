@@ -1,7 +1,5 @@
 package com.altunin.Bookstore.web;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.altunin.Bookstore.domain.Book;
 import com.altunin.Bookstore.domain.BookRepository;
+import com.altunin.Bookstore.domain.Category;
+import com.altunin.Bookstore.domain.CategoryRepository;
 
 @Controller
 public class BookController {
 	@Autowired
 	private BookRepository repository;
 
+	@Autowired
+	CategoryRepository crepository;
+	
 	@GetMapping("/booklist")
 	public String returnBooklist(Model model) {
 		model.addAttribute("bookList", repository.findAll());
@@ -32,13 +35,14 @@ public class BookController {
 	}
 
 	@GetMapping("/add")
-	public String addBook(Model model) {
+	public String addBook(@ModelAttribute Book newBook, Model model) {
 		model.addAttribute("newBook", new Book());
+		model.addAttribute("categories", crepository.findAll());
 		return "addbook";
 	}
 
 	@PostMapping("/submit")
-	public String addBook(@ModelAttribute Book newBook, Model model) {
+	public String addBook(@ModelAttribute Book newBook, @ModelAttribute Category category, Model model) {
 		repository.save(newBook);
 		return "redirect:/booklist";
 	}
@@ -46,7 +50,10 @@ public class BookController {
 	@GetMapping("/edit/{bookId}")
 	public String editBook(@PathVariable("bookId") long bookId, Model model) {
 		model.addAttribute("editThisBook", repository.findById(bookId));
+		model.addAttribute("newBook", new Book()); // might delete later incl @ModelAttribute
 		model.addAttribute("bookId", bookId);
+//		model.addAttribute("currentCategory", repository.findById(bookId).get().getCategory());
+		model.addAttribute("categories", crepository.findAll());
 		return "editbook";
 	}
 
