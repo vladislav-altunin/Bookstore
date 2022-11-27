@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 	private String title, author, isbn;
 	private int publicationYear, price;
 	
@@ -38,7 +38,7 @@ public class Book {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

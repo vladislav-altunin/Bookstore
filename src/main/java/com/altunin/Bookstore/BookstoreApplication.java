@@ -35,7 +35,7 @@ public class BookstoreApplication {
 			crepository.save(cat2);
 			crepository.save(cat3);
 			
-			repository.save(new Book("Ernest Hemingway", "1232323-21", "A Farewell to Arms", 1929, 100, cat1));
+			repository.save(new Book("Ernest Hemingway", "1232323-21", "A Farewell to Arms", 1929, 80, cat1));
 			repository.save(new Book("George Orwell", "2212343-5", "Animal Farm", 1945, 100, cat2));
 		};
 	}
