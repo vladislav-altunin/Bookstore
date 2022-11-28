@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface BookRepository extends CrudRepository<Book, Long>{
+public interface BookRepository extends CrudRepository<Book, Integer>{
 	
 	//Fetch books by id
 	List<Book> findById(@Param("id") int id);
