@@ -34,7 +34,7 @@ public class Book {
 	}
 
 	// Getters and setters Book
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 

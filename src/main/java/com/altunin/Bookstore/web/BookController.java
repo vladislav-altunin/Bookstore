@@ -55,5 +55,10 @@ public class BookController {
 		model.addAttribute("categories", crepository.findAll());
 		return "editbook";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
 
 }
