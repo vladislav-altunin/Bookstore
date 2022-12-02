@@ -1,6 +1,7 @@
 package com.altunin.Bookstore.web;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ public class BookRestController {
 	}
 
 	@GetMapping("/find/{bookId}")
-	public List<Book> findById(@PathVariable("bookId") int bookId) {
+	public Optional<Book> findById(@PathVariable("bookId") Integer bookId) {
 		return repository.findById(bookId);
 	}
 

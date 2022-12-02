@@ -28,7 +28,7 @@ public class BookController {
 	}
 
 	@GetMapping("/delete/{bookId}")
-	public String deleteBook(@PathVariable("bookId") int bookId) {
+	public String deleteBook(@PathVariable("bookId") Integer bookId) {
 		// System.out.println();
 		repository.deleteById(bookId);
 		return "redirect:/booklist";
@@ -48,7 +48,7 @@ public class BookController {
 	}
 
 	@GetMapping("/edit/{bookId}")
-	public String editBook(@PathVariable("bookId") int bookId, Model model) {
+	public String editBook(@PathVariable("bookId") Integer bookId, Model model) {
 		model.addAttribute("editThisBook", repository.findById(bookId));
 		model.addAttribute("newBook", new Book()); // might delete later incl @ModelAttribute
 		model.addAttribute("bookId", bookId);
@@ -58,7 +58,7 @@ public class BookController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "login";
+		return "/login";
 	}
 
 }

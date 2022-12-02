@@ -10,6 +10,8 @@ import com.altunin.Bookstore.domain.Book;
 import com.altunin.Bookstore.domain.BookRepository;
 import com.altunin.Bookstore.domain.Category;
 import com.altunin.Bookstore.domain.CategoryRepository;
+import com.altunin.Bookstore.domain.User;
+import com.altunin.Bookstore.domain.UserRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -18,6 +20,9 @@ public class BookstoreApplication {
 
 	@Autowired
 	CategoryRepository crepository;
+	
+	@Autowired
+	private UserRepository urepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);
@@ -37,6 +42,13 @@ public class BookstoreApplication {
 			
 			repository.save(new Book("Ernest Hemingway", "1232323-21", "A Farewell to Arms", 1929, 80, cat1));
 			repository.save(new Book("George Orwell", "2212343-5", "Animal Farm", 1945, 100, cat2));
+
+			//Save some users to the UserRepository
+			//Password: "password"
+			urepository.save(new User("patterson", "$2a$10$ONzQg6YLsKL5r5f410aFMOT2HffVKHm7vaXoc2GBBtAVzgqBuAbFy", "vlad.altunin@gmail.com", "ADMIN"));
+			urepository.save(new User("gutafor", "$2a$10$/pXopXkHxH7y.68CpwnnwOKZ7CT8c.xD0oAHVSMdkHBJ6WaVdHgAa", "katerina.gutovskaja@gmail.com", "ADMIN"));
+			urepository.save(new User("rostek", "$2a$10$I.TXVGcqao.Zi2gN5izsKeMFZBJwKiFBGK7fYi9/SWxPRNmPf8xTi", "rostik.petrenko@gmail.com", "USER"));
+			urepository.save(new User("valyunya", "$2a$10$x8EqfmV3x7v2I7RTzo60k.X1eMZ7e8KSe4f1usf1Ih8K/s3166E0m", "valya.jakobson@gmail.com", "USER"));
 		};
 	}
 

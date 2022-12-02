@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int categoryId;
+	private Integer categoryId;
 	private String name;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
@@ -33,11 +33,11 @@ public class Category {
 	}
 
 	// Getters and setters Category
-	public int getCategoryId() {
+	public Integer getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(int categoryId) {
+	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
 
