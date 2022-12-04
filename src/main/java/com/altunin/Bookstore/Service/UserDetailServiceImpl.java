@@ -1,5 +1,7 @@
 package com.altunin.Bookstore.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,9 +20,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User currUser = urepository.findByUsername(username);
+		Optional<User> currUser = urepository.findByUsername(username);
 		
-		UserDetails user  =  new org.springframework.security.core.userdetails.User(username, currUser.getPassword(), true, true,  true, true, AuthorityUtils.createAuthorityList(currUser.getRole()));
+		UserDetails user  =  new org.springframework.security.core.userdetails.User(username, currUser.get().getPassword(), true, true,  true, true, AuthorityUtils.createAuthorityList(currUser.get().getRole()));
 		
 		return user;
 	}
