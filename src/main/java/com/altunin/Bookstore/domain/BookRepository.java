@@ -1,6 +1,5 @@
 package com.altunin.Bookstore.domain;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -12,5 +11,8 @@ public interface BookRepository extends CrudRepository<Book, Integer>{
 	
 	//Fetch books by id
 	Optional<Book> findById(@Param("id") Integer id);
+	
+	//Fetch book by name
+	Optional<Book> findByTitle(@Param("title") String title);
 
 }
