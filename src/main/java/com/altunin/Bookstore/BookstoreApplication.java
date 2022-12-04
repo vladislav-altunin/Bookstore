@@ -45,10 +45,10 @@ public class BookstoreApplication {
 
 			//Save some users to the UserRepository
 			//Password: "password"
-			urepository.save(new User("patterson", "$2a$10$ONzQg6YLsKL5r5f410aFMOT2HffVKHm7vaXoc2GBBtAVzgqBuAbFy", "vlad.altunin@gmail.com", "ADMIN"));
-			urepository.save(new User("gutafor", "$2a$10$/pXopXkHxH7y.68CpwnnwOKZ7CT8c.xD0oAHVSMdkHBJ6WaVdHgAa", "katerina.gutovskaja@gmail.com", "ADMIN"));
-			urepository.save(new User("rostek", "$2a$10$I.TXVGcqao.Zi2gN5izsKeMFZBJwKiFBGK7fYi9/SWxPRNmPf8xTi", "rostik.petrenko@gmail.com", "USER"));
-			urepository.save(new User("valyunya", "$2a$10$x8EqfmV3x7v2I7RTzo60k.X1eMZ7e8KSe4f1usf1Ih8K/s3166E0m", "valya.jakobson@gmail.com", "USER"));
+//			urepository.save(new User("patterson", "$2a$10$ONzQg6YLsKL5r5f410aFMOT2HffVKHm7vaXoc2GBBtAVzgqBuAbFy", "vlad.altunin@gmail.com", "ADMIN"));
+//			urepository.save(new User("gutafor", "$2a$10$/pXopXkHxH7y.68CpwnnwOKZ7CT8c.xD0oAHVSMdkHBJ6WaVdHgAa", "katerina.gutovskaja@gmail.com", "ADMIN"));
+//			urepository.save(new User("rostek", "$2a$10$I.TXVGcqao.Zi2gN5izsKeMFZBJwKiFBGK7fYi9/SWxPRNmPf8xTi", "rostik.petrenko@gmail.com", "USER"));
+//			urepository.save(new User("valyunya", "$2a$10$x8EqfmV3x7v2I7RTzo60k.X1eMZ7e8KSe4f1usf1Ih8K/s3166E0m", "valya.jakobson@gmail.com", "USER"));
 		};
 	}
 
